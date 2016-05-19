@@ -4,14 +4,15 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 
+
 		<script src="mathquill-0.10.1/mathquill.min.js"></script>
 		<link rel="stylesheet" type="text/css" href="mathquill-0.10.1/mathquill.css">
 
 		<script>
 			var app = angular.module('app', []);
 		</script>
-		<script src="../directives/math-quill-static.js"></script>
-		<script src="../directives/math-quill-edit.js"></script>
+		<script src="directives/math-quill-static.js"></script>
+		<script src="directives/math-quill-edit.js"></script>
 	</head>
 
 	<body ng-app="app">
@@ -20,5 +21,9 @@
 		
 		mathQuillEdit: <span math-quill-edit ng-model="laTexExpression"></span>
 		<h1>Here is laTex: {{laTexExpression}}</h1>
+
+		<input type="text" ng-model="test" />
+		<br />
+		test: {{test}}
 	</body>
 </html>
