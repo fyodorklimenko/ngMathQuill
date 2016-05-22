@@ -1,17 +1,16 @@
 ﻿(function () {
     'use strict';
     angular.module('app')
-        .directive('mathQuillStatic', function () {
+        .directive('mathQuillStaticView', function () {
             return {
                 restrict: 'A',
                 scope: {
-                    initialValue: '@',
+                    value: '@',
                 },
                 link: function (scope, element) {
-                    var MQ = MathQuill.getInterface(2);
                     var element = $(element);
-                    element.html(scope.initialValue);
-                    MQ.StaticMath($(element)[0]);
+                    element.html(scope.value);
+                    MathQuill.getInterface(2).StaticMath($(element)[0]);
                 }
             }
         })

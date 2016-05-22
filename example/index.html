@@ -1,29 +1,40 @@
 <html>
 	<head>
 		<title>ngMathquill</title>
+		<link rel="stylesheet" type="text/css" href="style.css">
+
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 
-
-		<script src="mathquill-0.10.1/mathquill.min.js"></script>
-		<link rel="stylesheet" type="text/css" href="mathquill-0.10.1/mathquill.css">
+		<script src="../mathquill-0.10.1/mathquill.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="../mathquill-0.10.1/mathquill.css">
 
 		<script>
 			var app = angular.module('app', []);
 		</script>
-		<script src="directives/math-quill-static.js"></script>
-		<script src="directives/math-quill-edit.js"></script>
+		<script src="../directives/math-quill-static-view.js"></script>
+		<script src="../directives/math-quill-edit.js"></script>
+		<script src="../directives/math-quill-view.js"></script>
+
 	</head>
 
 	<body ng-app="app">
-		mathQuillStatic: <span math-quill-static initial-value="x_3 + \pi"></span>
+		<p><strong>mathQuillStaticView</strong> with value = "x_3 + \pi":</p>
+		Rendered: <span math-quill-static-view value="x_3 + \pi"></span>
 		<hr>
-		
-		mathQuillEdit: <span math-quill-edit ng-model="laTexExpression"></span>
-		<h1>Here is laTex: {{laTexExpression}}</h1>
 
-		<input type="text" ng-model="test" />
+		<p>
+		<strong>mathQuillView</strong>
+		</p>
+		
+		Type LaTex expression here: <input type="text" ng-model="value" /> (for example: <i>\frac{x^2}{\pi\cdot\sqrt{x^3}}</i>)
 		<br />
-		test: {{test}}
+		mathQuillView result: <span math-quill-view value="value"></span>
+		<hr>
+
+		<strong>mathQuillEdit</strong>
+		<br />
+		Type math expression here: <span math-quill-edit ng-model="laTexExpression"></span>
+		<pre>Here is the same math expression in LaTex: {{laTexExpression}}</pre>
 	</body>
 </html>
