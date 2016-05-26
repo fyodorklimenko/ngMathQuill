@@ -19,22 +19,28 @@
 	</head>
 
 	<body ng-app="app">
-		<p><strong>mathQuillStaticView</strong> with value = "x_3 + \pi":</p>
-		Rendered: <span math-quill-static-view value="x_3 + \pi"></span>
+		<div ng-init="value1 = 'x_3 + \\pi'">
+			<p><strong>mathQuillStaticView</strong> with value = "{{value1}}":</p>
+			Rendered: <span math-quill-static-view value="{{value1}}"></span>
+		</div>
 		<hr>
 
-		<p>
-		<strong>mathQuillView</strong>
-		</p>
-		
-		Type LaTex expression here: <input type="text" ng-model="value" /> (for example: <i>\frac{x^2}{\pi\cdot\sqrt{x^3}}</i>)
-		<br />
-		mathQuillView result: <span math-quill-view value="value"></span>
+		<div>
+			<p>
+			<strong>mathQuillView</strong>
+			</p>
+			
+			Type LaTex expression here: <input type="text" ng-model="value2" /> (for example: <i>\frac{x^2}{\pi\cdot\sqrt{x^3}}</i>)
+			<br />
+			mathQuillView result: <span math-quill-view value="value2"></span>
+		</div>
 		<hr>
 
-		<strong>mathQuillEdit</strong>
-		<br />
-		Type math expression here: <span math-quill-edit ng-model="laTexExpression"></span>
-		<pre>Here is the same math expression in LaTex: {{laTexExpression}}</pre>
+		<div ng-init="value3 = '2 \\cdot 2'">
+			<strong>mathQuillEdit</strong>
+			<br />
+			Type math expression here: <span math-quill-edit ng-model="value3"></span>
+			<pre>Here is the same math expression in LaTex: {{value3}}</pre>
+		</div>
 	</body>
 </html>

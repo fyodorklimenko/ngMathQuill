@@ -15,6 +15,12 @@
                             },
                         },
                     });
+
+                    scope.$watch(function() { return ngModelCtrl; }, function(nv) {
+						if (nv.$viewValue) {
+                            mq.write(nv.$viewValue);
+                        }
+                    });
                 },
             }
         });
