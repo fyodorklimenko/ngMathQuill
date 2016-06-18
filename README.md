@@ -30,7 +30,7 @@ Example of usage:
 
 ## **mathQuillEdit directive**
 
-that gets math expression as variable, represents it and gives to user interface to change it.
+Gets math expression as variable, represents it and gives to user interface to change it.
 
 ```
 <div ng-init="value = '3+\frac{1}{\pi}'">
