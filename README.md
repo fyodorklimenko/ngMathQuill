@@ -6,7 +6,7 @@ It's realy easy to show and edit complex mathematical formulas with MathQuill.
 
 So here we got:
 
-## mathQuillStaticView directive
+## **mathQuillStaticView directive**
 
 Gets math expression as string and just represents it.
 
@@ -16,7 +16,7 @@ Example of usage:
 <span math-quill-static-view value="1+x"></span>
 ```
 
-## mathQuillView directive
+## **mathQuillView directive**
 
 Gets math expression as variable and represents it. Also updates when given variable changes.
 
@@ -28,7 +28,9 @@ Example of usage:
 </div>
 ```
 
-## **mathQuillEdit directive** that gets math expression as variable, represents it and gives to user interface to change it.
+## **mathQuillEdit directive**
+
+that gets math expression as variable, represents it and gives to user interface to change it.
 
 ```
 <div ng-init="value = '3+\frac{1}{\pi}'">
