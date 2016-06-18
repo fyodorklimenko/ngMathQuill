@@ -6,19 +6,22 @@
                 restrict: 'A',
                 require: 'ngModel',
                 link: function (scope, element, attrs, ngModelCtrl) {
-                    var mq = MathQuill.getInterface(2).MathField($(element)[0], {
+                    var MQ = MathQuill.getInterface(2);
+                    var jElement = $(element)[0];
+
+                    var mathField= MQ.MathField(jElement, {
                         handlers: {
                             edit: function () {
-                                if (mq) {
-                                    ngModelCtrl.$setViewValue(mq.latex());
+                                if (mathField) {
+                                    ngModelCtrl.$setViewValue(mathField.latex());
                                 }
                             },
                         },
                     });
 
-                    scope.$watch(function() { return ngModelCtrl; }, function(nv) {
-						if (nv.$viewValue) {
-                            mq.write(nv.$viewValue);
+                    ngModelCtrl.$formatters.push(function(modelValue) {
+                        if (modelValue) {
+                            mathField.latex(modelValue);
                         }
                     });
                 },

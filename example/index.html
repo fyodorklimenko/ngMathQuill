@@ -12,10 +12,10 @@
 		<script>
 			var app = angular.module('app', []);
 		</script>
+
 		<script src="../directives/math-quill-static-view.js"></script>
 		<script src="../directives/math-quill-edit.js"></script>
 		<script src="../directives/math-quill-view.js"></script>
-
 	</head>
 
 	<body ng-app="app">
@@ -39,8 +39,10 @@
 		<div ng-init="value3 = '2 \\cdot 2'">
 			<strong>mathQuillEdit</strong>
 			<br />
-			Type math expression here: <span math-quill-edit ng-model="value3"></span>
+			Type math expression here: <span math-quill-edit ng-model="value3" ng-disabled="disabled"></span>
 			<pre>Here is the same math expression in LaTex: {{value3}}</pre>
+			<br />
+			<input type="button" ng-click="value3 = '\\pi\\cdot2'" value="I'll make math expression in Latex '\pi\cdot2'"/>
 		</div>
 	</body>
 </html>
